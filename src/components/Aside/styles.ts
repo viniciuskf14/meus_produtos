@@ -14,7 +14,7 @@ background: #0047FF;
 
 
 export const Header = styled.header `
-height: 70px;
+height: 100px;
 display:flex;
 align-items: center;
 
@@ -23,8 +23,11 @@ align-items: center;
  
 
 export const Title= styled.h3 `
+font-weight: 500;
+font-size: 16px;
+line-height: 16px;
 display:flex;
-margin-left: 10px;
+margin-left: -5px;
 color: white;
 
 `;
@@ -32,35 +35,52 @@ color: white;
 
 export const User = styled.div `
 display: flex;
+align-items: center;
 flex-direction: column;
+justify-content: center;
 margin: -10px;
+margin-top: -3px;
+
+
 `;
 
 
 export const Function = styled.p`
+font-weight:300;
+font-size:14px;
+line-height: 25px;
 display:flex;
-margin-left: 10px;
 color: white;
+width: 49px;
+
 `;
 
 
 export const LogImg= styled.img `
 height: 45px;
 width: 90px;
+top: -5px;
 `;
 
 
 export const BigLogImg = styled.img `
 position: absolute;
-left: 12.5%;
+left: 8.33%;
+right: 8.33%;
+top: 23%;
+bottom: 33%;
+display:flex;
 align-items: center;
 justify-content: center;
 `;
 
 
 export const Span = styled.p `
+display: flex;
+align-items: center;
+justify-content: center;
 font-weight: 500;
-font-size: 14px;
+font-size: 15px;
 color: white;
 `;
 
@@ -68,9 +88,9 @@ color: white;
 export const MenuContainer= styled.nav `
 display:flex;
 flex-direction: column;
-margin-top:50px;
+margin-top:70px;
 border-top: 1px solid white;
-width: 100px;
+width: 150px;
 margin: auto;
 
 `; 
@@ -80,19 +100,23 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 8px 18px;
+padding: 15px 55px;
+top:15px;
 margin:10px;
 position: relative;
-width: 132px;
-height: 40px;
-left: -30px;
+width: 142px;
+height: 43px;
+left: -10px;
 
 
-background: #0039CC;
+background: 0047FF;
 border-radius: 10px;
+cursor: pointer;
+
 /*mexer em uma propriedade especifica, no caso, no hover. Dar efeito ao passar o mouse*/ 
 &:hover {
  opacity: .4;
+ background-color:#0039CC;
 }
 
 >svg{
