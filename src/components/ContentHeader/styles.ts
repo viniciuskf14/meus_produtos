@@ -1,12 +1,7 @@
 import styled from 'styled-components'
 
+
 export const Container = styled.div `
-grid-area: CT;
-color: black
-
-`;
-
-export const Header = styled.div `
 
 `;
 
@@ -18,6 +13,7 @@ left: 486px;
 top: 190px;
 
 
+font-style: normal;
 font-weight: 600;
 font-size: 30px;
 line-height: 37px;

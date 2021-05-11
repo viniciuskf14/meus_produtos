@@ -3,11 +3,13 @@ import {Grid} from './styles'
 import Content from '../Content'
 import Aside from '../Aside'
 
-const Layout: React.FC = () => {
+const Layout: React.FC = ({children}) => {
     return (
         <Grid>
         <Aside/>
-        <Content/>
+        <Content>
+           {children}
+        </Content>
         </Grid>    
     )
 }

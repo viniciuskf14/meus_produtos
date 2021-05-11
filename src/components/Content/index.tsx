@@ -1,8 +1,10 @@
 import React from 'react'
-
-const Content: React.FC = () => {
+import {Container, Title} from './styles'
+const Content: React.FC = ({children}) => {
     return (
-        <h1>Content</h1>
+        <Container>
+            {children}
+        </Container>
     )
 }
 
