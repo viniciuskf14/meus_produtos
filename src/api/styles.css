@@ -1,0 +1,26 @@
+
+button {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 15px;
+
+position: absolute;
+width: 156px;
+height: 54px;
+left: 913px;
+top: 604px;
+color: white;
+background: #0047FF;
+border-radius: 10px;
+}
+
+
+h1{
+    color:white;
+    width: 30px;
+
+
+}
+

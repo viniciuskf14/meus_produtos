@@ -22,3 +22,5 @@ line-height: 37px;
 
 color: #000000;
 `;
+
+export const Input = styled.input ``;
