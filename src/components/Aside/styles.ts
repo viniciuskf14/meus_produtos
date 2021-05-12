@@ -126,3 +126,4 @@ cursor: pointer;
 
 `;
 
+export const Modal = styled.div``;
