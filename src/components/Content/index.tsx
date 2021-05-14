@@ -1,40 +1,25 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
-import {Container, Button, SmallLogImg} from './styles'
+import { Container, Button, SmallLogImg, Span } from './styles'
 import addTarefa from '../../assets/addTarefa.svg'
 
-const Content: React.FC = () => {
-    
-    
-   const [newTarefaOpen, setNewTarefaOpen] = useState(false);
-        
-           function handleOpenNewTarefaModal (){
-              setNewTarefaOpen(true)
-           }
-      
-           function handleCloseNewTarefaModal(){
-              setNewTarefaOpen(false)
-           }
-      
-    
-    
+interface ContentProps{
+   onOpenNewTaskModal: () => void;
+}
+
+export function Content ({onOpenNewTaskModal}: ContentProps)  {    
+
+
     return (
         <Container>
-            
-            <Button type ="button" onClick={handleOpenNewTarefaModal}>
-            <SmallLogImg src = {addTarefa} alt ="Nova Tarefa"/>
-                Nova Tarefa
+
+            <Button type="button" onClick={onOpenNewTaskModal}>
+                <SmallLogImg src={addTarefa} alt="Nova Tarefa" />
+                <Span>Nova Tarefa</Span>
             </Button>
 
-            <Modal isOpen = {newTarefaOpen}
-            onRequestClose ={handleCloseNewTarefaModal}
-            >
-                <h2>Nova Tarefa</h2>
-            </Modal>
-
-
         </Container>
-        
+
     )
 }
 

@@ -10,6 +10,21 @@ export const Header = styled.div `
 
 `;
 
+export const Span = styled.span `
+position: static;
+width: 94px;
+height: 21px;
+margin-left: 23px;
+top: 16.5px;
+
+font-size: 16px;
+line-height: 21px;
+
+
+
+color: #FFFFFF;
+`;
+
 export const Title = styled.h1 `
 position: absolute;
 width: 111px;
@@ -38,7 +53,7 @@ padding: 15px;
 position: absolute;
 width: 156px;
 height: 54px;
-left: 913px;
+left: 950px;
 top: 604px;
 
 background: #0047FF;
@@ -55,3 +70,7 @@ bottom: 20.83%;
 color: #FFFF;
 
 `;
+
+ {
+
+}
