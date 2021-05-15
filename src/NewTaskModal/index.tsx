@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import {Container} from './styles'
-
+import { RiCloseLine } from "react-icons/ri";
 
 interface NewTaskModalProps{
 isOpen: boolean;
@@ -15,15 +15,19 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
         overlayClassName ="card-create-modal"
         className="modal-create"
         >
-           <Container>
+           <Container>     
             <h2>Criar Tarefa</h2>
+            <label>Nome da Tarefa</label>
             <input
+            
             type = "String"
-            placeholder ="Nome da Tarefa"
+            
             />
+            <label>Descrição da Tarefa</label>
+            
             <input
             type = "String"
-            placeholder ="Descrição da Tarefa"
+
             />
            
             <button 
