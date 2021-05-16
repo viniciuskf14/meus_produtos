@@ -1,6 +1,10 @@
+import React, { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 import {Container} from './styles'
-import { RiCloseLine } from "react-icons/ri";
+
+
+
+
 
 interface NewTaskModalProps{
 isOpen: boolean;
@@ -8,6 +12,19 @@ onRequestClose:() => void;
 }
 
 export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
+    const [title, setTitle] = useState(''); //armazenar os valores(titulo e descrição) dentro do array
+    const [content, setContent] = useState('');
+
+    // declaração da função que quero que seja executada toda vez que salvarem uma tarefa
+    function handleCreateNewTask(event: FormEvent){
+     event.preventDefault();
+
+     console.log({
+         title, 
+         content
+     })
+    }
+
     return (
        
         <Modal isOpen={isOpen}
@@ -15,20 +32,23 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
         overlayClassName ="card-create-modal"
         className="modal-create"
         >
-           <Container>     
+            
+           <Container onSubmit = {handleCreateNewTask}>    
             <h2>Criar Tarefa</h2>
             <label>Nome da Tarefa</label>
             <input
             
             type = "String"
-            
+            value = {title} //para que os valores digitados no input sejam interceptados
+            onChange ={event => setTitle (event.target.value)}// função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array. 
             />
             <label>Descrição da Tarefa</label>
             
             <input
             type = "String"
-
-            />
+            value = {content} //para que os valores digitados no input sejam interceptados 
+            onChange ={event => setContent (event.target.value)} // função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array.
+          />
            
             <button 
             type = "submit"
