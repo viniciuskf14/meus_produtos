@@ -1,7 +1,6 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import {Container} from './styles'
-
 
 
 
@@ -19,13 +18,14 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
     function handleCreateNewTask(event: FormEvent){
      event.preventDefault();
 
-     console.log({
-         title, 
-         content
-     })
-    }
+     const newTask = {
+        title, content
+        
+    }};
 
+    
     return (
+        
        
         <Modal isOpen={isOpen}
         onRequestClose={onRequestClose}
@@ -49,14 +49,19 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
             value = {content} //para que os valores digitados no input sejam interceptados 
             onChange ={event => setContent (event.target.value)} // função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array.
           />
+
+         
            
             <button 
             type = "submit"
+            onClick = {onRequestClose}
             >Cancelar</button>
             
             <button 
             type = "submit"
+            
             >Salvar</button>
+            
           
            </Container>
         </Modal>

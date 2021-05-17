@@ -7,7 +7,7 @@ createServer({
   routes(){
     this.namespace = 'api'
       
-    this.get('/swagger', () => {
+    /*this.get('/swagger', () => {
       return [
         {
           "guid": "string",
@@ -17,7 +17,7 @@ createServer({
           "situation": "uncompleted"
         }
       ]
-    })
+    })*/
     
     
   }
