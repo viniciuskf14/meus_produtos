@@ -94,8 +94,10 @@ width: 150px;
 margin: auto;
 
 `; 
-
-export const MenuItemLink= styled.div `
+interface MenuItemLinkProps{
+    isActive: boolean;
+}
+export const MenuItemLink= styled.button<MenuItemLinkProps> `
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -109,7 +111,7 @@ height: 43px;
 left: -10px;
 
 
-background: 0047FF;
+background: ${(props) => props.isActive ? '#0039CC' : 'transparent'}; // acessei a propriedade do isActive, se o isActive for verdadeiro(ou seja, se tiver sendo acessado pelo usuario) ele mudará de cor para uma tonalidade mais escura
 border-radius: 10px;
 cursor: pointer;
 

@@ -22,7 +22,8 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
         title, content
         
     }};
-
+     
+    const TaskContent = []
     
     return (
         
@@ -34,32 +35,36 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
         >
             
            <Container onSubmit = {handleCreateNewTask}>    
+           
             <h2>Criar Tarefa</h2>
             <label>Nome da Tarefa</label>
             <input
             
             type = "String"
+            required
             value = {title} //para que os valores digitados no input sejam interceptados
             onChange ={event => setTitle (event.target.value)}// função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array. 
+            
             />
             <label>Descrição da Tarefa</label>
             
             <input
-            type = "String"
+            type = "text"
+            required  
             value = {content} //para que os valores digitados no input sejam interceptados 
+            
             onChange ={event => setContent (event.target.value)} // função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array.
           />
 
          
            
             <button 
-            type = "submit"
+            type = "button"
             onClick = {onRequestClose}
             >Cancelar</button>
             
             <button 
             type = "submit"
-            
             >Salvar</button>
             
           
