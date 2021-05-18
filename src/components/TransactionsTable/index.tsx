@@ -33,7 +33,7 @@ export function TransactionsTable(){
 
               <tbody>
                   {transactions.map(transaction=>(
-                 <tr key="id">
+                 <tr key={transaction.id}>
                     <td>{transaction.title}</td>
                     <td>{transaction.content}</td>
                     <td></td>
