@@ -12,10 +12,11 @@ interface Transaction{
 
 
 export function TransactionsTable(){
-   
+   const [transactions, setTransactions] = useState<Transaction[]>([])
+
     useEffect (() => {
         api.get('transactions')
-        .then(response => console.log(response.data))
+        .then(response => setTransactions(response.data.transactions))
     }, []);
    
 
@@ -31,12 +32,13 @@ export function TransactionsTable(){
            </thead>
 
               <tbody>
-                 
+                  {transactions.map(transaction=>(
+                 <tr key="id">
+                    <td>{transactions.title}</td>
+                    <td>{transactions.content}</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    
-                
+                    </tr>
+                ))}
               </tbody>
           </table>
         </Container>
