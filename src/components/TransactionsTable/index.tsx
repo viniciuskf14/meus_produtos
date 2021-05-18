@@ -34,8 +34,8 @@ export function TransactionsTable(){
               <tbody>
                   {transactions.map(transaction=>(
                  <tr key="id">
-                    <td>{transactions.title}</td>
-                    <td>{transactions.content}</td>
+                    <td>{transaction.title}</td>
+                    <td>{transaction.content}</td>
                     <td></td>
                     </tr>
                 ))}
