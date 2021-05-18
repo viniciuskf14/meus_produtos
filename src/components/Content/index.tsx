@@ -1,7 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { Container, Button, SmallLogImg, Span } from './styles'
 import addTarefa from '../../assets/addTarefa.svg'
+
+
+export function TranscationTable(){
+    useEffect(() => {
+        fetch('https://chronos.compraqui.app/swagger/v1/swagger.json')
+        .then(response => response.json())
+        .then(data => console.log(data))
+    }, [] )
+}
 
 interface ContentProps{
    onOpenNewTaskModal: () => void;
@@ -14,6 +23,7 @@ export function Content ({onOpenNewTaskModal}: ContentProps)  {
         <Container>
 
             <Button type="button" onClick={onOpenNewTaskModal}>
+               
                 <SmallLogImg src={addTarefa} alt="Nova Tarefa" />
                 <Span>Nova Tarefa</Span>
             </Button>

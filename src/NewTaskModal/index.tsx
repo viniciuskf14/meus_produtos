@@ -1,5 +1,6 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import Modal from 'react-modal';
+import { api } from '../services/api';
 import {Container} from './styles'
 
 
@@ -17,15 +18,18 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
     // declaração da função que quero que seja executada toda vez que salvarem uma tarefa
     function handleCreateNewTask(event: FormEvent){
      event.preventDefault();
-
-     const newTask = {
-        title, content
-        
-    }};
      
-    const TaskContent = []
+     const data ={
+         title, 
+         content
+     }
+     api.post('/transactions', data)
+        
+    };
+     
     
-    return (
+    
+    return(
         
        
         <Modal isOpen={isOpen}
@@ -43,7 +47,7 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
             type = "String"
             required
             value = {title} //para que os valores digitados no input sejam interceptados
-            onChange ={event => setTitle (event.target.value)}// função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array. 
+            onChange ={event => setTitle (String(event.target.value))}// função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array. 
             
             />
             <label>Descrição da Tarefa</label>
@@ -53,7 +57,7 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
             required  
             value = {content} //para que os valores digitados no input sejam interceptados 
             
-            onChange ={event => setContent (event.target.value)} // função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array.
+            onChange ={event => setContent (String(event.target.value))} // função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array.
           />
 
          

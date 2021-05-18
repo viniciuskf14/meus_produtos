@@ -26,14 +26,13 @@ function handleCloseNewTaskModal() {
             <GlobalStyles />
                       
             <Content onOpenNewTaskModal = {handleOpenNewTaskModal}/>
+            
             <Layout/>
             
                 <NewTaskModal
                 isOpen ={isNewTaskModalOpen}
                 onRequestClose = {handleCloseNewTaskModal}
                 />
-            
-
 
         </>
     )
