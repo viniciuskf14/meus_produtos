@@ -13,7 +13,7 @@ onRequestClose:() => void;
 
 export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
     const [title, setTitle] = useState(''); //armazenar os valores(titulo e descrição) dentro do array
-    const [content, setContent] = useState('');
+    const [description, setDescription] = useState('');
 
     // declaração da função que quero que seja executada toda vez que salvarem uma tarefa
     function handleCreateNewTask(event: FormEvent){
@@ -21,9 +21,9 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
      
      const data ={
          title, 
-         content
+         description
      }
-     api.post('/transactions', data)
+     api.post('https://chronos.compraqui.app/api/tasks', data)
         
     };
      
@@ -55,9 +55,9 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
             <input
             type = "text"
             required  
-            value = {content} //para que os valores digitados no input sejam interceptados 
+            value = {description} //para que os valores digitados no input sejam interceptados 
             
-            onChange ={event => setContent (String(event.target.value))} // função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array.
+            onChange ={event => setDescription (String(event.target.value))} // função para que seja executada toda vez que o valor do input for alterado e assim, jogado pra dentro do array.
           />
 
          

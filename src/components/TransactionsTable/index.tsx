@@ -1,49 +1,40 @@
-import {useEffect, useState} from 'react';
-import { api } from '../../services/api';
+import React, {useEffect, useState} from 'react';
+import {api} from '../../services/api';
 import {Container} from './styles'
+import axios from 'axios';
+import {TaskItem} from './TaskItem'
 
-
-
-interface Transaction{
-      id: number;
-      title: string;
-      content: string;
+interface Tasks{
+    guid: string,
+    title: string,
+    description: string,
 }
 
+export function TasksList (){
+    const [Tasks, setTasks] = useState<Tasks[]>([]);
 
-export function TransactionsTable(){
-   const [transactions, setTransactions] = useState<Transaction[]>([])
+    useEffect(() => {
+           fetch('https://chronos.compraqui.app/api/tasks')
+           .then(response => response.json())
+           .then(data => setTasks(data))
+    }, [Tasks])
 
-    useEffect (() => {
-        api.get('transactions')
-        .then(response => setTransactions(response.data.transactions))
-    }, []);
-   
 
-   return(
-        <Container>
-          <table>
-          <thead>
-                  <th>
-                      <tr></tr>
-                      <tr></tr>
-                      <tr></tr>
-                  </th>
-           </thead>
-
-              <tbody>
-                  {transactions.map(transaction=>(
-                 <tr key={transaction.id}>
-                    <td>{transaction.title}</td>
-                    <td>{transaction.content}</td>
-                    <td></td>
-                    </tr>
-                ))}
-              </tbody>
-          </table>
-        </Container>
-    )
-}
-
-export default TransactionsTable
-
+return(
+    <Container>
+       <section className ="ListTasks">
+           <h1>Lista de Tarefas</h1>
+           <ul>
+               {Tasks.map(task =>{
+                   return <TaskItem key = {task.guid} task = {task}/>
+               }
+               )}
+               
+          </ul>
+          
+       </section>
+       
+       </Container>
+)
+};
+export default TasksList;
