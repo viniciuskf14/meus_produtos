@@ -26,7 +26,7 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
      api.post('https://chronos.compraqui.app/api/tasks', data)
         
     };
-     
+    
     
     
     return(
@@ -62,15 +62,17 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
 
          
            
+            
+            <footer>
             <button 
-            type = "button"
+            type = "submit"
             onClick = {onRequestClose}
             >Cancelar</button>
             
             <button 
             type = "submit"
             >Salvar</button>
-            
+            </footer>
           
            </Container>
         </Modal>

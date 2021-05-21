@@ -40,7 +40,7 @@ input[type = "text"]{
 }
 
 
-button{
+button[type ="submit"]{
     margin-top: 15px;
     margin-left: 52px;
     width: 3.75rem;

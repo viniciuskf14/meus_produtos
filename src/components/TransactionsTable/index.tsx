@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {api} from '../../services/api';
-import {Container} from './styles'
+import {Container, Title, Desc} from './styles'
 import axios from 'axios';
 import {TaskItem} from './TaskItem'
+
 
 interface Tasks{
     guid: string,
     title: string,
     description: string,
+    situation: string
 }
+
 
 export function TasksList (){
     const [Tasks, setTasks] = useState<Tasks[]>([]);
@@ -21,20 +24,25 @@ export function TasksList (){
 
 
 return(
+    
     <Container>
-       <section className ="ListTasks">
-           <h1>Lista de Tarefas</h1>
-           <ul>
-               {Tasks.map(task =>{
-                   return <TaskItem key = {task.guid} task = {task}/>
+       
+           
+           
+           {Tasks.map(task =>{
+                   return( 
+                        <section>
+                        <ul key = {task.guid}>
+                        <Title>{task.title}</Title> 
+                        <Desc>{task.description}</Desc>
+                        </ul>
+                        </section>
+                   )
+                    
                }
                )}
-               
-          </ul>
           
-       </section>
-       
        </Container>
-)
-};
+)}
+
 export default TasksList;
