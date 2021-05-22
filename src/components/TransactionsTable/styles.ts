@@ -17,7 +17,8 @@ background: #0047FF;
 border-radius: 10px;
  }
 button{
-   position: absolute;
+  display: flex;
+   position: relative;
 left: 92.67%;
 right: 41.67%;
 top: 16.67%;
@@ -25,6 +26,7 @@ bottom: 16.67%;
 height: 25px;
 width: 10px;
 background-color: transparent;
+
 }
  
 `;

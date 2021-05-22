@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, FormEvent} from 'react';
 import {api} from '../../services/api';
 import {Container, Title, Desc, LogImg} from './styles'
 import axios from 'axios';
@@ -7,7 +7,9 @@ import menu from '../../assets/menu.svg'
 
  
 
+    
 interface Tasks{
+    id: number;
     guid: string,
     title: string,
     description: string,
@@ -19,7 +21,15 @@ interface Tasks{
 export function TasksList (){
     const [Tasks, setTasks] = useState<Tasks[]>([]);
  
-
+    useEffect (() => {
+        loadTasks()
+    }, [])
+    
+async function loadTasks() {
+    const response = await api.get ('/api/tasks')
+    console.log(response)
+    setTasks(response.data)
+}
 
     useEffect(() => {
            fetch('https://chronos.compraqui.app/api/tasks')
@@ -27,7 +37,10 @@ export function TasksList (){
            .then(data => setTasks(data))
         }, [Tasks])   
      
-    
+    async function deleteTask(id: number){
+        axios.delete(`​https://chronos.compraqui.app/api/tasks/${id}`)
+        loadTasks()
+    }
 return(
     
     <Container>
@@ -44,10 +57,11 @@ return(
                                  
                             </ul>
                         
-                        <LogImg src = {menu} alt ="opções"></LogImg>
-                        <button className = "excluir">
-                       
+                        
+                        <button onClick = {() => deleteTask(task.id)}>
+                        Excluir
                         </button>
+                        <button >Editar</button>
                         </section>
                         
                    )       
