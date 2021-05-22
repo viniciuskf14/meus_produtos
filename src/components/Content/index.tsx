@@ -4,13 +4,7 @@ import { Container, Button, SmallLogImg, Span } from './styles'
 import addTarefa from '../../assets/addTarefa.svg'
 
 
-export function TranscationTable(){
-    useEffect(() => {
-        fetch('https://chronos.compraqui.app/swagger/v1/swagger.json')
-        .then(response => response.json())
-        .then(data => console.log(data))
-    }, [] )
-}
+
 
 interface ContentProps{
    onOpenNewTaskModal: () => void;

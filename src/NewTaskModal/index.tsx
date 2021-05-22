@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { FormEvent, useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { api } from '../services/api';
@@ -24,11 +25,15 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
          description
      }
      api.post('https://chronos.compraqui.app/api/tasks', data)
-        
+    
     };
-    
-    
-    
+    function handleSubmit(event: FormEvent){
+        event.preventDefault();
+        
+      
+        
+          
+    }
     return(
         
        
@@ -78,3 +83,4 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
         </Modal>
     );
 }
+export default NewTaskModal;

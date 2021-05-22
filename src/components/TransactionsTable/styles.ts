@@ -14,7 +14,19 @@ left: 486px;
 top: 254px;
 
 background: #0047FF;
-border-radius: 10px;}
+border-radius: 10px;
+ }
+button{
+   position: absolute;
+left: 92.67%;
+right: 41.67%;
+top: 16.67%;
+bottom: 16.67%;
+height: 25px;
+width: 10px;
+background-color: transparent;
+}
+ 
 `;
 
 export const Title = styled.h2`
@@ -32,7 +44,7 @@ line-height: 21px;
 `;
 export const Desc = styled.span `
 position: fixed;
-width: 161px;
+width: 171px;
 height: 21px;
 left: 510px;
 top: 297px;
@@ -40,4 +52,15 @@ top: 297px;
 
 font-size: 18px;
 line-height: 21px;
+`;
+
+export const LogImg = styled.img`
+position: absolute;
+left: 85.67%;
+right: 41.67%;
+top: 16.67%;
+bottom: 16.67%;
+height: 25px;
+width: 90px;
+
 `;
