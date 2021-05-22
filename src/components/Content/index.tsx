@@ -20,7 +20,7 @@ export function Content ({onOpenNewTaskModal}: ContentProps)  {
                
                 <SmallLogImg src={addTarefa} alt="Nova Tarefa" />
                 <Span>Nova Tarefa</Span>
-                <p>teste</p>
+                
             </Button>
 
         </Container>
