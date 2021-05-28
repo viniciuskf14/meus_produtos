@@ -8,8 +8,8 @@ import Layout from '../components/Layout'
 const AppRoutes: React.FC = () => (
  <Layout>
     <Switch>
-        <Route path="/Tarefas" exact component={Tarefas}/>
-        <Route path="/Sobre" exact component={Sobre}/>
+        <Route path="/tarefas" exact component={Tarefas}/>
+        <Route path="/sobre" exact component={Sobre}/>
     </Switch>
  </Layout>
 
