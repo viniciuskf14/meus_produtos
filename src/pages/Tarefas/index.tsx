@@ -1,15 +1,15 @@
 import React from 'react';
-import {Container,Content} from './styles'
-import ContentHeader from '../../components/ContentHeader'
+import {Container} from './styles'
+import Layout from '../../components/Layout'
 
+import Aside from '../../components/Aside'
 
 
 const Tarefas: React.FC = () => {
 return (
     <Container>
-        <ContentHeader/>
+        <Layout/>
     
-       <Content/>
     </Container>
 
 )

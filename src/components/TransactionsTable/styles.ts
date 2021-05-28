@@ -16,6 +16,8 @@ top: 254px;
 background: #0047FF;
 border-radius: 10px;
  }
+
+
 button{
   display: flex;
    position: relative;

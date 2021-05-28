@@ -13,6 +13,7 @@ onRequestClose:() => void;
 }
 
 export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
+    const [id, setID] = useState ([]);
     const [title, setTitle] = useState(''); //armazenar os valores(titulo e descrição) dentro do array
     const [description, setDescription] = useState('');
 
@@ -21,6 +22,7 @@ export function NewTaskModal({isOpen, onRequestClose}: NewTaskModalProps) {
      event.preventDefault();
      
      const data ={
+         id,
          title, 
          description
      }

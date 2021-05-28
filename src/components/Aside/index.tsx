@@ -22,13 +22,15 @@ const Aside: React.FC = () => {
 
            <MenuContainer>
              
-              <MenuItemLink
+              <MenuItemLink 
               type="button"
               onClick={() => {setActive('taskActive'); }}
               isActive={statusActive ==='taskActive'}
               >
+                <a href ="/Tarefas">
                 <BigLogImg src = {Tarefas} alt = "Logo Tarefas"/>
                  <Span> Tarefas </Span>
+                 </a>
                 </MenuItemLink>
               
               
@@ -37,8 +39,10 @@ const Aside: React.FC = () => {
               onClick={() => {setActive('sobreActive'); }}
               isActive={statusActive ==='sobreActive'}
               >
+                <a href ="/Sobre">
                  <BigLogImg src = {Sobre} alt = "Logo Sobre" />
                   <Span>Sobre</Span>
+                  </a>
                 </MenuItemLink>
            </MenuContainer>
         </Container>
